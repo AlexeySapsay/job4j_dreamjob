@@ -1,7 +1,7 @@
+<!-- import classes from model -->
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="ru.job4j.dream.store.Store" %>
 <%@ page import="ru.job4j.dream.model.Post" %>
-
 
 <!doctype html>
 <html lang="en">
@@ -23,6 +23,7 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
 
+    <!-- Show table -->
     <title>Работа мечты</title>
 </head>
 <body>

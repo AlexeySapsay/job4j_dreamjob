@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * https://job4j.ru/profile/exercise/82/task-view/443
@@ -24,6 +25,8 @@ public class Store {
     private final Map<Integer, Post> posts = new ConcurrentHashMap<>();
 
     private Map<Integer, Candidate> candidates = new ConcurrentHashMap<>();
+
+    private static AtomicInteger postId = new AtomicInteger(4);
 
     private Store() {
         posts.put(1, new Post(1, "Ivan", "Junior Java Job",
@@ -47,5 +50,10 @@ public class Store {
 
     public Collection<Candidate> findAllCandidates() {
         return candidates.values();
+    }
+
+    public void save(Post post) {
+        post.setId(postId.incrementAndGet());
+        posts.put(post.getId(), post);
     }
 }

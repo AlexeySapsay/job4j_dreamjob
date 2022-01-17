@@ -54,12 +54,29 @@ public class Store {
     }
 
     public void save(Post post) {
-        post.setId(postId.getAndIncrement());
+        if (post.getId() == 0) {
+            post.setId(postId.getAndIncrement());
+        }
         posts.put(post.getId(), post);
     }
 
     public void save(Candidate candidate) {
-        candidate.setId(candidateId.getAndIncrement());
+        if (candidate.getId() == 0) {
+            candidate.setId(candidateId.getAndIncrement());
+        }
         candidates.put(candidate.getId(), candidate);
     }
+
+    public Post findById(int id) {
+        return posts.get(id);
+    }
+
+    public Candidate candidateFindById(int id) {
+        return candidates.get(id);
+    }
+
+//    public Candidate findById(int id) {
+//        return candidates.get(id);
+//    }
+    // вопрос Герману, почему метод findById не перегружает второй похожий метод?
 }

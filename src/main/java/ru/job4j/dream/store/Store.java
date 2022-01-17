@@ -74,9 +74,4 @@ public class Store {
     public Candidate candidateFindById(int id) {
         return candidates.get(id);
     }
-
-//    public Candidate findById(int id) {
-//        return candidates.get(id);
-//    }
-    // вопрос Герману, почему метод findById не перегружает второй похожий метод?
 }

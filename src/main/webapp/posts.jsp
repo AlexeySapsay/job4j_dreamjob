@@ -61,10 +61,7 @@
                         </td>
                         <td><%= post.getName() %>
                         </td>
-                        <td><%= post.getDescription() %>
-                        </td>
-                        <td><%= post.getCreated() %>
-                        </td>
+                        <td><%= post.getDescription() %></td>
                     </tr>
                     <% } %>
                     </tbody>

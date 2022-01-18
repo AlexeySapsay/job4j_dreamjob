@@ -1,6 +1,7 @@
 package ru.job4j.dream.model;
 
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Objects;
 
 /**
@@ -17,24 +18,25 @@ public class Post {
     private int id;
     private String name;
     private String description;
-    private LocalDateTime created;
+    private Calendar created;
 
-    public Post(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+//    public Post(int id, String name) {
+//        this.id = id;
+//        this.name = name;
+//    }
 
     public Post(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.created = Calendar.getInstance();
     }
 
-    public Post(int id, String name, String description, LocalDateTime created) {
+    public Post(int id, String name, String description, Calendar created) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.created = created;
+        this.created = Calendar.getInstance();
     }
 
     public int getId() {
@@ -61,11 +63,11 @@ public class Post {
         this.description = description;
     }
 
-    public LocalDateTime getCreated() {
+    public Calendar getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public void setCreated(Calendar created) {
         this.created = created;
     }
 

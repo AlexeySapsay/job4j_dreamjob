@@ -4,6 +4,7 @@ import ru.job4j.dream.model.Candidate;
 import ru.job4j.dream.model.Post;
 
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,11 +32,11 @@ public class Store {
 
     private Store() {
         posts.put(1, new Post(1, "Ivan", "Junior Java Job",
-                LocalDateTime.of(2022, 1, 10, 10, 10, 10, 0)));
+                Calendar.getInstance()));
         posts.put(2, new Post(2, "Alex", "Middle Java Job",
-                LocalDateTime.of(2020, 10, 20, 10, 10, 10, 0)));
+                Calendar.getInstance()));
         posts.put(3, new Post(3, "Youriy", "Senior Java Job",
-                LocalDateTime.of(2018, 12, 10, 10, 10, 10, 0)));
+                Calendar.getInstance()));
         candidates.put(1, new Candidate(1, "Junior Java"));
         candidates.put(2, new Candidate(2, "Middle Java"));
         candidates.put(3, new Candidate(3, "Senior Java"));

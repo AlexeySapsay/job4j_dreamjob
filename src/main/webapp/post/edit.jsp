@@ -26,7 +26,7 @@
 <body>
 <%
     String id = request.getParameter("id");
-    Post post = new Post(0, "");
+    Post post = new Post(0, "", "");
     if (id != null) {
         post = Store.instOf().findById(Integer.parseInt(id));
     }
@@ -44,8 +44,17 @@
             <div class="card-body">
                 <form action="<%=request.getContextPath()%>/post/save?id=<%=post.getId()%>" method="post">
                     <div class="form-group">
-                        <label>Имя</label>
-                        <input type="text" class="form-control" name="name" value="<%=post.getName()%>">
+                        <label>Описание вакансии</label>
+                        <label>
+                            <label>
+                                <input type="text" class="form-control1" name="name" value="<%=post.getName()%>"
+                                        placeholder="vacancy name">
+                            </label>
+                            <label>
+                                <input type="text" class="form-control2" name="description"
+                                       value="<%=post.getDescription()%>" placeholder="description">
+                            </label>
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-primary">Схоронить</button>
                 </form>

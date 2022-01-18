@@ -8,6 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDateTime;
+import java.util.Calendar;
 
 public class PostServlet extends HttpServlet {
     @Override
@@ -16,7 +19,9 @@ public class PostServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         Store.instOf().save(
                 new Post(Integer.parseInt(req.getParameter("id")),
-                        req.getParameter("name")));
+                        req.getParameter("name"),
+                        req.getParameter("description")
+                ));
         resp.sendRedirect(req.getContextPath() + "/posts.jsp");
     }
 }

@@ -1,5 +1,6 @@
 package ru.job4j.dream.servlet;
 
+
 import ru.job4j.dream.model.Candidate;
 import ru.job4j.dream.store.Store;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * @version 1.0
  * @since 22.01.2022
  */
-public class CandidateServlet extends HttpServlet {
+public class CandidatesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

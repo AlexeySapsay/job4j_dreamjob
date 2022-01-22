@@ -13,7 +13,7 @@ import java.io.IOException;
  *
  * @author AlexSapsay (sapsayalexey@gmail.com)
  * @version 1.0
- * @since 17.01.2022
+ * @since 22.01.2022
  */
 public class IndexServlet extends HttpServlet {
     @Override

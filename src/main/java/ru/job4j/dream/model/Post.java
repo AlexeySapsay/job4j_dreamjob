@@ -4,16 +4,6 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Objects;
 
-/**
- * https://job4j.ru/profile/exercise/82/task-view/443
- * <p>
- * изучение работы с сервлетами
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 13.01.2022
- */
-
 public class Post {
     private int id;
     private String name;

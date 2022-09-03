@@ -11,4 +11,12 @@ public class IndexControl {
     public String index() {
         return "index";
     }
+    @GetMapping("/greetings")
+    public String greetings(){
+        return "greetingsJava";
+    }
+    @GetMapping("/tableStatistic")
+    public String tableStatistic(){
+        return "tableStatistic";
+    }
 }

@@ -8,15 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-/**
- * https://job4j.ru/profile/exercise/82/task-view/443
- * <p>
- * изучение работы с сервлетами
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 22.01.2022
- */
 
 public class PostServlet extends HttpServlet {
     @Override

@@ -2,15 +2,6 @@ package ru.job4j.dream.model;
 
 import java.util.Objects;
 
-/**
- * https://job4j.ru/profile/exercise/82/task-view/445
- * <p>
- * изучение работы с сервлетами
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 13.01.2022
- */
 public class Candidate {
     private int id;
     private String name;

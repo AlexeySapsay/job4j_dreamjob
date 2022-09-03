@@ -9,16 +9,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-/**
- * https://job4j.ru/profile/exercise/82/task-view/443
- * <p>
- * изучение работы с сервлетами
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 13.01.2022
- */
 public class Store {
 
     private static final Store INST = new Store();

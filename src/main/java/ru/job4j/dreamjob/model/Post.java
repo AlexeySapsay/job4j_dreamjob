@@ -8,17 +8,14 @@ public class Post {
     private String name;
 
     private String description;
+    private LocalDateTime created;
+
 
     public Post(int id, String name, String description, LocalDateTime created) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.created = created;
-    }
-
-    public Post(int id, String name) {
-        this.id = id;
-        this.name = name;
     }
 
     public String getDescription() {
@@ -36,8 +33,6 @@ public class Post {
     public void setCreated(LocalDateTime created) {
         this.created = created;
     }
-
-    private LocalDateTime created;
 
 
     public int getId() {
@@ -62,8 +57,7 @@ public class Post {
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
         return id == post.id && Objects.equals(name, post.name)
-                && Objects.equals(description, post.description)
-                && Objects.equals(created, post.created);
+                && Objects.equals(description, post.description);
     }
 
     @Override

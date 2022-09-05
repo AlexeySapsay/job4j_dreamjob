@@ -6,10 +6,8 @@ import java.util.Objects;
 public class Post {
     private int id;
     private String name;
-
     private String description;
     private LocalDateTime created;
-
 
     public Post(int id, String name, String description, LocalDateTime created) {
         this.id = id;
@@ -34,7 +32,6 @@ public class Post {
         this.created = created;
     }
 
-
     public int getId() {
         return id;
     }
@@ -56,13 +53,12 @@ public class Post {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return id == post.id && Objects.equals(name, post.name)
-                && Objects.equals(description, post.description);
+        return id == post.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, created);
+        return Objects.hash(id);
     }
 
     @Override

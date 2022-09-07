@@ -57,9 +57,7 @@ public class Candidate {
             return false;
         }
         Candidate candidate = (Candidate) o;
-        {
-            return id == candidate.id;
-        }
+        return id == candidate.id;
     }
 
     @Override
@@ -69,11 +67,12 @@ public class Candidate {
 
     @Override
     public String toString() {
-        return "Candidate{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", created=" + created +
-                '}';
+        return "Candidate{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", description='" + description
+                + '\''
+                + ", created=" + created
+                + '}';
     }
 }

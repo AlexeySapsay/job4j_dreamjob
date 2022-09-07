@@ -13,17 +13,17 @@ public class CandidateStore {
 
     private final Map<Integer, Candidate> candidates = new ConcurrentHashMap<>();
 
-    private CandidateStore(){
+    private CandidateStore() {
         candidates.put(1, new Candidate(1, "Ivan", "very strong junior", LocalDateTime.now()));
         candidates.put(2, new Candidate(2, "Anton", "perspective middle", LocalDateTime.now()));
         candidates.put(3, new Candidate(3, "Alex", "amazing senior!", LocalDateTime.now()));
     }
 
-    public static CandidateStore instOf(){
+    public static CandidateStore instOf() {
         return INST;
     }
 
-    public Collection<Candidate> findAll(){
+    public Collection<Candidate> findAll() {
         return candidates.values();
     }
 }

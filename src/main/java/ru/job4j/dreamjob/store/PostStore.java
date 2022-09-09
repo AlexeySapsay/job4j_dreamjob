@@ -1,5 +1,6 @@
 package ru.job4j.dreamjob.store;
 
+import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Post;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Repository
 public class PostStore {
 
     private static final PostStore INST = new PostStore();
@@ -33,10 +35,10 @@ public class PostStore {
         return posts.values();
     }
 
-    public void add(Post post) {
+    public Post add(Post post) {
         int id = atomicInteger.incrementAndGet();
         post.setId(id);
-        posts.put(post.getId(), post);
+        return posts.put(post.getId(), post);
     }
 
     public Post findById(int id) {

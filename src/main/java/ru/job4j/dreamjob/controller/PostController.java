@@ -13,16 +13,16 @@ import java.time.LocalDateTime;
 @Controller
 public class PostController {
 
-    private final PostStore store = PostStore.instOf();
+    private final PostStore postStore = PostStore.instOf();
 
     @GetMapping("/posts")
     public String posts(Model model) {
-        model.addAttribute("posts", store.findAll());
+        model.addAttribute("posts", postStore.findAll());
         return "posts";
     }
 
     @GetMapping("/formAddPost")
-    public String addPost(Model model) {
+    public String formAddPost(Model model) {
         model.addAttribute("post", new Post(0, "Заполните поле:",
                 "Добавьте описание", LocalDateTime.now()));
         return "addPost";
@@ -30,19 +30,19 @@ public class PostController {
 
     @PostMapping("/createPost")
     public String createPost(@ModelAttribute Post post) {
-        store.add(post);
+        postStore.add(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/updatePost")
+    public String updatePost(@ModelAttribute Post post) {
+        postStore.update(post);
         return "redirect:/posts";
     }
 
     @GetMapping("/formUpdatePost/{postId}")
     public String formUpdatePost(Model model, @PathVariable("postId") int id) {
-        model.addAttribute("post", store.findById(id));
+        model.addAttribute("post", postStore.findById(id));
         return "updatePost";
-    }
-
-    @GetMapping("/updatePost")
-    public String updatePost(@ModelAttribute Post post) {
-        store.update(post);
-        return "redirect:/posts";
     }
 }

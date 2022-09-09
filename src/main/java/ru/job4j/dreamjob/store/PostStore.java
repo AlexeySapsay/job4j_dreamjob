@@ -18,12 +18,11 @@ public class PostStore {
 
     private PostStore() {
         int id = atomicInteger.incrementAndGet();
-        posts.put(id, new Post(id, "Junior Java Job", "Create simple app", LocalDateTime.now()));
+        posts.put(id, new Post(id, "Junior", "Create simple app", LocalDateTime.now()));
         id = atomicInteger.incrementAndGet();
-        posts.put(id, new Post(id, "Middle Java Job", "Create middle hard app",
-                LocalDateTime.now()));
+        posts.put(id, new Post(id, "Middle", "Create middle hard app", LocalDateTime.now()));
         id = atomicInteger.incrementAndGet();
-        posts.put(id, new Post(id, "Senior Java Job", "Create very hard app", LocalDateTime.now()));
+        posts.put(id, new Post(id, "Senior", "Create very hard app", LocalDateTime.now()));
     }
 
     public static PostStore instOf() {

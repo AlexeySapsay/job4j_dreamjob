@@ -19,8 +19,8 @@ public class PostService {
         return new ArrayList<>(store.findAll());
     }
 
-    public Post add(Post post) {
-        return store.add(post);
+    public void add(Post post) {
+         store.add(post);
     }
 
     public Post findById(int id) {

@@ -4,6 +4,7 @@ import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Service;
 import ru.job4j.dreamjob.model.Candidate;;
 import ru.job4j.dreamjob.store.CandidateStore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +29,7 @@ public class CandidateService {
         return store.findById(id);
     }
 
-    public Candidate update(Candidate candidate) {
-        return store.update(candidate);
+    public void update(Candidate candidate) {
+        store.update(candidate);
     }
-
 }

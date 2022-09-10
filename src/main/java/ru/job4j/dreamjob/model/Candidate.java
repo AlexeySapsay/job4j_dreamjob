@@ -7,10 +7,12 @@ import java.util.Objects;
 public class Candidate implements Serializable {
     private int id;
     private String name;
+
+    private byte[] photo;
+
     private String description;
     private LocalDateTime created;
     private boolean visible;
-
     private City city;
 
     public Candidate(int id,
@@ -64,6 +66,14 @@ public class Candidate implements Serializable {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
     }
 
     @Override

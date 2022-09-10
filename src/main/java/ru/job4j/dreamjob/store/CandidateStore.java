@@ -3,7 +3,6 @@ package ru.job4j.dreamjob.store;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Candidate;
-import ru.job4j.dreamjob.model.Post;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -54,5 +53,4 @@ public class CandidateStore {
     public Candidate update(Candidate candidate) {
         return candidates.replace(candidate.getId(), candidate);
     }
-
 }

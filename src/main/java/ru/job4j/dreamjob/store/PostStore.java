@@ -3,6 +3,7 @@ package ru.job4j.dreamjob.store;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Post;
+
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Map;
@@ -21,11 +22,11 @@ public class PostStore {
 
     private PostStore() {
         int id = atomicInteger.incrementAndGet();
-        posts.put(id, new Post(id, "Junior", "Create simple app", LocalDateTime.now()));
+        posts.put(id, new Post(id, "Junior", "Create simple app", null, LocalDateTime.now()));
         id = atomicInteger.incrementAndGet();
-        posts.put(id, new Post(id, "Middle", "Create middle hard app", LocalDateTime.now()));
+        posts.put(id, new Post(id, "Middle", "Create middle hard app", null, LocalDateTime.now()));
         id = atomicInteger.incrementAndGet();
-        posts.put(id, new Post(id, "Senior", "Create very hard app", LocalDateTime.now()));
+        posts.put(id, new Post(id, "Senior", "Create very hard app", null, LocalDateTime.now()));
     }
 
     public static PostStore instOf() {

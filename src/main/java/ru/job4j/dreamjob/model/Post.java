@@ -9,14 +9,15 @@ public class Post implements Serializable {
     private String name;
     private String description;
     private LocalDateTime created;
-
     private boolean visible;
+    private City city;
 
-    public Post(int id, String name, String description, LocalDateTime created) {
+    public Post(int id, String name, String description, City city, LocalDateTime created) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.created = created;
+        this.city = city;
     }
 
     public String getDescription() {

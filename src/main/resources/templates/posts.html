@@ -28,6 +28,7 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- links on the had of the site -->
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Главная <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" th:href="@{/posts}">Вакансии</a>
@@ -54,6 +55,7 @@
                         <i class="fa fa-edit"></i>
                     </a>
                     <span th:text="${post.name}"></span>
+                    <!-- check bocks for post publications -->
                     <span th:if="${post.visible}">
                         <i class="fa fa-check-square-o"></i>
                     </span>

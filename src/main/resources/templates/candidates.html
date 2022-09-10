@@ -30,6 +30,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- links on the had of the site -->
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Главная <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" th:href="@{/posts}">Вакансии</a>
@@ -57,6 +58,13 @@
                         <i class="fa fa-edit"></i>
                     </a>
                     <span th:text="${candidate.name}"></span>
+                    <!-- check bocks for candidate publications -->
+                    <span th:if="${candidate.visible}">
+                        <i class="fa fa-check-square-o"></i>
+                    </span>
+                    <span th:if="${!candidate.visible}">
+                        <i class="fa fa-square-o"></i>
+                    </span>
                 </td>
                 <td th:text="${candidate.description}"></td>
                 <td th:text="${candidate.created}"></td>

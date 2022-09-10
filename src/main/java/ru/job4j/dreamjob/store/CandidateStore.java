@@ -23,11 +23,14 @@ public class CandidateStore {
 
     private CandidateStore() {
         int id = atomicInteger.incrementAndGet();
-        candidates.put(id, new Candidate(id, "Ivan", "very strong junior", LocalDateTime.now()));
+        candidates.put(id, new Candidate(id, "Ivan", "very strong junior",
+                null, LocalDateTime.now()));
         id = atomicInteger.incrementAndGet();
-        candidates.put(id, new Candidate(id, "Anton", "perspective middle", LocalDateTime.now()));
+        candidates.put(id, new Candidate(id, "Anton",
+                "perspective middle", null, LocalDateTime.now()));
         id = atomicInteger.incrementAndGet();
-        candidates.put(id, new Candidate(id, "Alex", "amazing senior!", LocalDateTime.now()));
+        candidates.put(id, new Candidate(id, "Alex",
+                "amazing senior!", null, LocalDateTime.now()));
     }
 
     public static CandidateStore instOf() {

@@ -1,21 +1,29 @@
 package ru.job4j.dreamjob.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Candidate {
+public class Candidate implements Serializable {
     private int id;
     private String name;
     private String description;
     private LocalDateTime created;
-
     private boolean visible;
 
-    public Candidate(int id, String name, String description, LocalDateTime created) {
+    private City city;
+
+    public Candidate(int id,
+                     String name,
+                     String description,
+                     City city,
+                     LocalDateTime created) {
+
         this.id = id;
         this.name = name;
         this.description = description;
         this.created = created;
+        this.city = city;
     }
 
     public int getId() {

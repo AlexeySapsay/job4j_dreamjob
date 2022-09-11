@@ -28,7 +28,8 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- links on the had of the site -->
+
+        <!-- links on the head of the site -->
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Главная <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" th:href="@{/posts}">Вакансии</a>
@@ -37,6 +38,7 @@
             <a class="nav-item nav-link" th:href="@{/formAddCandidate}">Добавить кандидата</a>
         </div>
     </nav>
+
     <div class="row">
         <table class="table">
             <thead>
@@ -44,6 +46,7 @@
                 <th scope="col"> #</th>
                 <th scope="col">Название вакансии</th>
                 <th scope="col">Описание вакансии</th>
+                <th scope="col">Город</th>
                 <th scope="col">Дата создания</th>
             </tr>
             </thead>
@@ -55,6 +58,7 @@
                         <i class="fa fa-edit"></i>
                     </a>
                     <span th:text="${post.name}"></span>
+
                     <!-- check bocks for post publications -->
                     <span th:if="${post.visible}">
                         <i class="fa fa-check-square-o"></i>
@@ -64,6 +68,7 @@
                     </span>
                 </td>
                 <td th:text="${post.description}"></td>
+                <td th:text="${cities.get(post.city.id)}"></td>
                 <td th:text="${post.created}"></td>
             </tbody>
         </table>

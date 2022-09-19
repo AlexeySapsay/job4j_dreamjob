@@ -68,7 +68,7 @@
                     </span>
                 </td>
                 <td th:text="${post.description}"></td>
-                <td th:text="${cities.get(post.city.id)}"></td>
+                <td th:text="${post.city != null} ? ${post.city.name} : 'null value!'"></td>
                 <td th:text="${post.created}"></td>
             </tbody>
         </table>

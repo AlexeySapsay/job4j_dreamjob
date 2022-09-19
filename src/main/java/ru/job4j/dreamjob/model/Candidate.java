@@ -15,6 +15,25 @@ public class Candidate implements Serializable {
     private boolean visible;
     private City city;
 
+    public Candidate() {
+    }
+
+    public Candidate(int id,
+                     String name) {
+
+        this.id = id;
+        this.name = name;
+    }
+
+    public Candidate(int id,
+                     String name,
+                     String description) {
+
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
     public Candidate(int id,
                      String name,
                      String description,
@@ -74,6 +93,14 @@ public class Candidate implements Serializable {
 
     public void setPhoto(byte[] photo) {
         this.photo = photo;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     @Override

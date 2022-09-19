@@ -38,8 +38,7 @@ public class PostStore {
     }
 
     public Post add(Post post) {
-        int id = atomicInteger.incrementAndGet();
-        post.setId(id);
+        post.setId(atomicInteger.incrementAndGet());
         return posts.put(post.getId(), post);
     }
 
@@ -48,6 +47,7 @@ public class PostStore {
     }
 
     public Post update(Post post) {
+        post.setCreated(LocalDateTime.now());
         return posts.replace(post.getId(), post);
     }
 }

@@ -1,5 +1,7 @@
 package ru.job4j.dreamjob.model;
 
+import ru.job4j.dreamjob.service.CityService;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -21,6 +23,7 @@ public class Post implements Serializable {
         this.name = name;
         this.description = description;
         this.created = created;
+
         this.city = city;
     }
 
@@ -64,6 +67,14 @@ public class Post implements Serializable {
         this.visible = visible;
     }
 
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -86,10 +97,10 @@ public class Post implements Serializable {
         return "Post{"
                 + "id=" + id
                 + ", name='" + name
-                + '\''
                 + ", description='" + description
-                + '\''
                 + ", created=" + created
+                + ", visible=" + visible
+                + ", city=" + city
                 + '}';
     }
 }

@@ -35,7 +35,7 @@
                 <a class="nav-item nav-link active" href="#">Главная <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" th:href="@{/posts}">Вакансии</a>
                 <a class="nav-item nav-link" th:href="@{/formAddPost}">Добавить вакансию</a>
-                <a class="nav-item nav-link" th:href="@{/candidates}">Кандидаты</a>
+                <a class="nav-item nav-link active" href="#">Кандидаты <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" th:href="@{/formAddCandidate}">Добавить кандидата</a>
             </div>
         </div>
@@ -45,6 +45,7 @@
             <thead>
             <tr>
                 <th scope="col"> # </th>
+                <th scope="col">Фото</th>
                 <th scope="col">Имя кандидата</th>
                 <th scope="col">Описание кандидата</th>
                 <th scope="col">Дата создания</th>
@@ -56,17 +57,23 @@
                 <td>
                     <!-- photo of candidate -->
                     <img th:width="150" th:high="150" th:src="@{|/photoCandidate/${candidate.id}|}">
-
+                </td>
+                <td>
                     <a th:href="@{|/formUpdateCandidate/${candidate.id}|}">
                         <i class="fa fa-edit"></i>
                     </a>
+                    <!-- candidate name -->
                     <span th:text="${candidate.name}"></span>
 
                     <!-- check box for candidate publication -->
+                    <span th:if="${candidate.visible}">
+                        <i class="fa fa-square-o"></i>
+                    </span>
                     <span th:if="${!candidate.visible}">
                         <i class="fa fa-square-o"></i>
                     </span>
                 </td>
+
                 <td th:text="${candidate.description}"></td>
                 <td th:text="${candidate.created}"></td>
             </tr>
